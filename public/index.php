@@ -6,7 +6,7 @@ $webroot .= ($webroot[strlen($webroot) - 1] != '/') ? '/' : '';
 define('WS_ROOT', $webroot);
 
 define('ROOT_PATH', realpath(str_replace("\\", "/", realpath(dirname(__FILE__))) . '/../') . '/');
-define('VENDOR_PATH', ROOT_PATH . 'vendors/');
+define('VENDOR_PATH', ROOT_PATH . 'vendor/');
 define('PUBLIC_PATH', ROOT_PATH . 'public/');
 define('VIEW_PATH', ROOT_PATH . 'templates/');
 
