@@ -1,1 +1,1 @@
-*** Slim-Boilerplate
+# Slim-Boilerplate
