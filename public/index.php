@@ -8,6 +8,6 @@ define('WS_ROOT', $webroot);
 define('ROOT_PATH', realpath(str_replace("\\", "/", realpath(dirname(__FILE__))) . '/../') . '/');
 define('VENDOR_PATH', ROOT_PATH . 'vendor/');
 define('PUBLIC_PATH', ROOT_PATH . 'public/');
-define('VIEW_PATH', ROOT_PATH . 'templates/');
+define('APP_PATH', ROOT_PATH . 'app/');
 
-require_once(ROOT_PATH . 'bootstrap.php');
+require_once(APP_PATH . 'bootstrap.php');

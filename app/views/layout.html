@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% block head %}
+			<title>{% block page_title %}{{ SITE_NAME }}{% endblock %}</title>
+		{% endblock %}
+	</head>
+	<body>
+		{% include "header.html" %}
+		{% block content %}{% endblock %}
+		{% include "footer.html" %}
+	</body>
+</html>
