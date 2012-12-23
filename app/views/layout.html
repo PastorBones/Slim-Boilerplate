@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		{% block head %}
-			<title>{% block page_title %}{{ SITE_NAME }}{% endblock %}</title>
+		<meta charset="utf-8">
+		<meta name="keywords" content="{{ page_keywords }}">
+		<meta name="description" content="{{ page_desc }}">
+		<meta name="author" content="{{ SITE_AUTHOR }}">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+      	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<title>{% block page_title %}{{ SITE_NAME }}{% endblock %}</title>
 		{% endblock %}
 	</head>
 	<body>
-		{% include "header.html" %}
-		{% block content %}{% endblock %}
-		{% include "footer.html" %}
+		<div class="page-wrapper">
+			<header class="navbar-wrapper">
+				<div class="container">
+					{% include "header.html" %}	
+				</div>
+			</header>
+			<div class="container">
+				{% block content %}{% endblock %}
+			</div>
+			<footer class="container">
+				<div class="row">
+					{% include "footer.html" %}	
+				</div>
+			</footer>
+		</div>
+		<!-- JavaScript at the bottom for fast page loading -->
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="javascripts/bootstrap.min.js"></script>
+		<script src="javascripts/script.js"></script>
+		
+		{% if GOOGLE_UA_ID is defined %}
+		<script>
+			var _gaq = [['_setAccount', '{{ GOOGLE_UA_ID }}'], ['_trackPageview'], ['_trackPageLoadTime']];
+			( function(d, t) {
+					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+					g.async = 1;
+					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+					s.parentNode.insertBefore(g, s)
+				}(document, 'script'));
+		</script>
+		{% endif %}
 	</body>
 </html>
